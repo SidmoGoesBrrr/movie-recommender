@@ -7,14 +7,15 @@ import random
 key = st.secrets["SIDKEY"]
 host = decrypter.decrypt_text(
     "^(~x|P~@/&^W|x`-/u|&/m^#~,^v|u~@^P|Bu/@~2Tw/v`,v#W^v/B^T^u/H/w`@|m/(`K`T^5w`<&^w/1`4`5|w9|6~1/T`0~8/s`6`T/Pw`s2|T0^20/4|T|9|1`s`1`1/<5|5|T~P`B`u", key)
-
+user= st.secrets["USER"]
+password=st.secrets["PASSWORD"]
 
 
 def init_connection():
     return pymysql.connect(
         host=host,
-        user='admin',
-        password="c;JAh}a]<Wu[M^y_VZK=",
+        user=user,
+        password=password,
         db='recommender_db',
         port=3306
     )
