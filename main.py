@@ -43,6 +43,15 @@ reset = st.sidebar.button("Reset")
 if reset:
     age=0                         
 st.subheader("Movie Recommendations")
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        .stApp { bottom: 60px; }
+        </style>
+        """
+
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 if age==0:
     tagline=st.markdown("Spend your time **WATCHING** not _SEARCHING_")
     tagline_2=st.text("Enter your age, gender and genre to get movie recommendations")
