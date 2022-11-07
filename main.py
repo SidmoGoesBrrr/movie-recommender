@@ -2,10 +2,7 @@ from zocrypt import decrypter
 import streamlit as st
 import pandas as pd
 import pymysql
-import tmdbsimple as tmdb
 import os
-from bs4 import BeautifulSoup
-import requests
 import random
 try:
     key = st.secrets["SIDKEY"]
@@ -94,12 +91,5 @@ if age>0:
             empty.append(recommended_movies["title"][i])
             cols = st.columns(1)
             cols[0].header(recommended_movies["title"][i])
-            try:
-                tmdb.REQUESTS_TIMEOUT = 5
-                search = tmdb.Search()
-                response = search.movie(query=recommended_movies["title"][i])
-                poster=tmdb.Movies(response["results"][0]["id"]).info()
-                cols[0].write(poster["overview"])
-            except:
-                imdb_url="https://www.imdb.com/find?q="+recommended_movies["title"][i].replace(" ", "%20")+"&ref_=nv_sr_sm"
-                cols[0].write(f"Check the movie out [here]({imdb_url})")
+            imdb_url="https://www.imdb.com/find?q="+recommended_movies["title"][i].replace(" ", "%20")+"&ref_=nv_sr_sm"
+            cols[0].write(f"Check the movie out [here]({imdb_url})")
