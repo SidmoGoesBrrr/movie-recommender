@@ -1,4 +1,4 @@
-# movie-recommender
+# Movie Recommeder
 Spend your time WATCHING not SEARCHING
 
 ## Inspiration
