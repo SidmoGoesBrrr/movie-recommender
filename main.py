@@ -4,14 +4,11 @@ import pandas as pd
 import pymysql
 import os
 import random
-try:
-    key = st.secrets["SIDKEY"]
-    tmdb.API_KEY = decrypter.decrypt_text("^5&`s`7~1`s`3^5^9~2|0P/ws|&|5/6`6^1/8|80~2^6&`1`P|58~3^4~&", key)
-    host = decrypter.decrypt_text(
-        "^(~x|P~@/&^W|x`-/u|&/m^#~,^v|u~@^P|Bu/@~2Tw/v`,v#W^v/B^T^u/H/w`@|m/(`K`T^5w`<&^w/1`4`5|w9|6~1/T`0~8/s`6`T/Pw`s2|T0^20/4|T|9|1`s`1`1/<5|5|T~P`B`u", key)
+key = st.secrets["SIDKEY"]
+tmdb.API_KEY = decrypter.decrypt_text("^5&`s`7~1`s`3^5^9~2|0P/ws|&|5/6`6^1/8|80~2^6&`1`P|58~3^4~&", key)
+host = decrypter.decrypt_text(
+    "^(~x|P~@/&^W|x`-/u|&/m^#~,^v|u~@^P|Bu/@~2Tw/v`,v#W^v/B^T^u/H/w`@|m/(`K`T^5w`<&^w/1`4`5|w9|6~1/T`0~8/s`6`T/Pw`s2|T0^20/4|T|9|1`s`1`1/<5|5|T~P`B`u", key)
 
-except:
-    pass
 
 
 def init_connection():
